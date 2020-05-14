@@ -5,12 +5,32 @@
             <div class="avatar_box">
                 <img src="../assets/logo.png" alt="avatar">
             </div>
+            <!-- 登陆表单 -->
+            <div>
+                <el-form ref="loginFormRef" :model="loginForm" label-width="60px">
+                    <el-form-item label="账号">
+                    <el-input v-model="loginForm.username"></el-input>
+                    </el-form-item>
+                </el-form>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      loginForm: {
+        username: 'admin',
+        password: '123456'
+      }
+    }
+  },
+  methods () {
+
+  }
+}
 </script>
 <style lang="less" scoped>
 .login_container {
