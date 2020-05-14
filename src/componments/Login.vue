@@ -1,6 +1,8 @@
 <template>
     <div class="login_container">
-        登陆
+        <div class="login_box">
+
+        </div>
     </div>
 </template>
 
@@ -11,5 +13,16 @@ export default {}
 .login_container {
       background-color: #2b4b6b;
       height: 100%;
+}
+.login_box {
+    background-color: #ffffff;
+    width: 450px;
+    height: 360px;
+  border-radius: 3px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  background-color: #fff;
 }
 </style>
