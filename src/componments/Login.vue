@@ -9,12 +9,14 @@
             <div>
                 <el-form ref="loginFormRef" :model="loginForm" label-width="60px" class="login_form">
                     <el-form-item label="账号"  prop="username">
-                    <el-input v-model="loginForm.username"></el-input>
+                    <el-input prefix-icon="el-icon-user" v-model="loginForm.username" placeholder="请输入账号"></el-input>
                     </el-form-item>
                     <el-form-item label="密码"  prop="password">
                             <el-input
+                                prefix-icon="el-icon-view"
                                 v-model="loginForm.password"
-                                type="password"
+                                placeholder="请输入密码"
+                                type="password" show-password
                                 ></el-input>
                     </el-form-item>
                     <el-form-item class="btns">
@@ -34,6 +36,11 @@ export default {
       loginForm: {
         username: 'admin',
         password: '123456'
+      },
+      // 表单验证
+      loginFormRules: {
+        username: [],
+        password: []
       }
     }
   },
@@ -83,5 +90,9 @@ export default {
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
+}
+.btns {
+  display: flex;
+  justify-content: center;
 }
 </style>
