@@ -21,7 +21,7 @@
                     </el-form-item>
                     <el-form-item class="btns">
                         <el-button type="primary">登录</el-button>
-                        <el-button type="info">重置</el-button>
+                        <el-button type="info" @click="resetLoginForm">重置</el-button>
                     </el-form-item>
                 </el-form>
             </div>
@@ -50,8 +50,13 @@ export default {
       }
     }
   },
-  methods () {
-
+  methods: {
+    // 表单重置按钮
+    resetLoginForm () {
+      console.log(this.$refs)
+      // resetFields：element-ui提供的表单方法
+      this.$refs.loginFormRef.resetFields()
+    }
   }
 }
 </script>
