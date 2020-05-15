@@ -53,9 +53,10 @@ export default {
   methods: {
     // 表单重置按钮
     resetLoginForm () {
-      console.log(this.$refs)
+      // console.log(this.$refs.loginFormRef)
       // resetFields：element-ui提供的表单方法
       this.$refs.loginFormRef.resetFields()
+      console.log('重置成功')
     }
   }
 }
