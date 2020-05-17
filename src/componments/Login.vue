@@ -20,7 +20,7 @@
                                 ></el-input>
                     </el-form-item>
                     <el-form-item class="btns">
-                        <el-button type="primary">登录</el-button>
+                        <el-button type="primary" @click="login">登录</el-button>
                         <el-button type="info" @click="resetLoginForm">重置</el-button>
                     </el-form-item>
                 </el-form>
@@ -57,6 +57,17 @@ export default {
       // resetFields：element-ui提供的表单方法
       this.$refs.loginFormRef.resetFields()
       console.log('重置成功')
+    },
+    login () {
+      // 表单预验证
+      // valid : bool类型
+      this.$refs.loginFormRef.validate(async valid => {
+        console.log(valid)
+        if (!valid) return false
+        const { data: res } = await this.$http.post('login', this.loginForm)
+        console.log(res)
+      })
+      // console.log('登录成功')
     }
   }
 }
